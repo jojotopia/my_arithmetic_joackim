@@ -1,0 +1,4 @@
+.pytest_cache
+.tox
+my_arithmetic_joackim/__pycache__
+tests/__pycache__
