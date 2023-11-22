@@ -18,10 +18,20 @@ deploy:
     - pip install poetry
     - poetry install
     - poetry build
-    - echo "my-arithmetic-$USER deployment on stable servers"
+    - echo "my-arithmetic-joackim deployment on stable servers"
     - ls dist/
   only:
     - tags
     - develop
   tags:
     - docker
+
+deployDevelop:
+  stage: deploy
+  image: python:3.11
+  script:
+    - echo "my-arithmetic-joackim deployment on develop servers"
+    - echo "Branch: $CI_COMMIT_REF_NAME"
+    - ls dist/
+  except:
+    - main
