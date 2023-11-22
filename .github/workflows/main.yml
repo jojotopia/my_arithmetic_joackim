@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: readthedocs/readthedocs-action@v2.4.0 # Utiliser une version spécifique de l'action
+      - uses: readthedocs/actions/preview@v1
         with:
           token: ${{ secrets.RTD_TOKEN }}
           url: https://readthedocs.com/api/v2/
