@@ -15,7 +15,7 @@ test:
   tags:
     - docker
 
-deploy-stable:
+deploy:
   stage: deploy
   script:
     - poetry build
