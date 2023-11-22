@@ -11,3 +11,5 @@ test:
     - poetry run tox
   tags:
     - docker
+
+coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
