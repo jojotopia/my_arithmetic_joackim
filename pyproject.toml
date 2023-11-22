@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.11"
 pytest = "*"
 tox = "*"
-coverage = "^7.3"
+coverage = "^6.1"
 
 [build-system]
 requires = ["poetry-core"]
