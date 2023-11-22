@@ -3,7 +3,8 @@ test:
   image: python:3.11
   script:
     - pip install tox coverage coverage-badge
-    - coverage run -m tox
+    - tox
+    - coverage run -m pytest
     - coverage-badge -o badge.svg
     - git config --global user.name "GitLab Runner"
     - git config --global user.email "gitlab-runner@example.com"
