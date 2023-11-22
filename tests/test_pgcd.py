@@ -1,5 +1,5 @@
 import pytest
-from my_arithmetic_joackim import pgcd
+from my_arithmetic_joackim.pgcd import pgcd
 
 def test_pgcd():
     # Tester des cas simples
