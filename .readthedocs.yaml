@@ -16,6 +16,7 @@ build:
     # https://python-poetry.org/docs/#installing-manually
     - pip install poetry
     - poetry install
+    - cd docs
     - poetry run .\make clean
     - poetry run .\make html
     # You can also specify other tool versions:
