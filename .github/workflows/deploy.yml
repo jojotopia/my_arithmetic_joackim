@@ -3,12 +3,13 @@ name: My workflow
 on: [push, pull_request]
 
 jobs:
-  runs-on: docker://python:3.11
-  steps:
-    - uses: actions/checkout@v2
-    - uses: dschep/install-poetry-action@v1.3
-    - run: poetry install
-    - run: poetry build
-    - run: echo "my-arithmetic-joackim deployment on develop servers"
-    - run: ls dist/
-  if: github.ref != 'refs/heads/main'
+  deploy:
+    runs-on: docker://python:3.11
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dschep/install-poetry-action@v1.3
+      - run: poetry install
+      - run: poetry build
+      - run: echo "my-arithmetic-joackim deployment on develop servers"
+      - run: ls dist/
+    if: github.ref != 'refs/heads/main'
