@@ -37,6 +37,7 @@ python:
      extra_requirements:
        - docs
    - method: shell
+     path: docs/
      command: |
        poetry install
        cd docs
