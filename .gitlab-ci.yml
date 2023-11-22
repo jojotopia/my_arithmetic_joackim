@@ -27,3 +27,12 @@ deploy-stable:
     - main
   tags:
     - docker
+
+deploy-develop:
+  stage: deploy
+  script:
+    - poetry build
+    - echo "my-arithmetic-$USER deployment on develop servers"
+    - ls dist/
+  except:
+    - main
