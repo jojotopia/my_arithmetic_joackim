@@ -10,7 +10,13 @@ python = "^3.11"
 pytest = "*"
 tox = "*"
 coverage = "*"
+poetry-dynamic-versioning = "^1.1.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+style = "pep440"
+pattern = "v(?P<base>\\d+(\\.\\d+){0,2})"

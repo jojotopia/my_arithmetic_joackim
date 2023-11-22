@@ -14,3 +14,15 @@ test:
     - poetry run coverage report
   tags:
     - docker
+
+deploy-stable:
+  stage: deploy
+  script:
+    - poetry build
+    - echo "my-arithmetic-$USER deployment on stable servers"
+    - ls dist/
+  only:
+    - tags
+    - main
+  tags:
+    - docker
