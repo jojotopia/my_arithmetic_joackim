@@ -2,19 +2,13 @@ test:
   stage: test
   image: python:3.11
   script:
-    - pip install tox
-    - tox
-    - pip install coverage
-    - coverage run -m pytest
+    - pip install tox coverage coverage-badge
+    - coverage run -m tox
+    - coverage-badge -o badge.svg
+    - git config --global user.name "GitLab Runner"
+    - git config --global user.email "gitlab-runner@example.com"
+    - git add badge.svg
+    - git commit -m "Mise à jour du badge de couverture des tests"
+    - git push origin main
   tags:
     - docker
-badge:
-  stage: badge
-  image: python:3.11
-  script:
-    - pip install coverage-badge
-    - coverage-badge -o media/badge.svg
-  tags:
-    - docker
-  needs:
-    - test
