@@ -34,19 +34,17 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+
+      - name: npm install, make test-coverage
+        run: |
+          npm install
+          make test-coverage
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-        with:
-          python-version: '3.11'
-      - run: pip install tox pytest coverage
-      - run: tox
-      - run: pip install poetry
-      - run: poetry install
-      - run: poetry run tox
-      - run: poetry run coverage run -m pytest
-      - run: poetry run coverage report
-      - run: coverage run -m pytest
       - uses: coverallsapp/github-action@v1.1.2
         with:
           github-token: ${{ github.token }}
-          path-to-lcov: ./coverage/lcov.info # Spécifier le chemin du fichier lcov.info
