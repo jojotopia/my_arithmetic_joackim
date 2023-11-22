@@ -8,7 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - uses: dschep/install-poetry-action@v1.3
         with:
           python-version: '3.11'
       - run: pip install tox
@@ -21,7 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v2
-      - uses: dschep/install-poetry-action@v1.3
       - run: poetry install
       - run: poetry build
       - run: echo "my-arithmetic-joackim deployment on stable servers"
