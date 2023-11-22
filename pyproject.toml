@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-tox = "^4.11.3"
+tox = "*"
 
 
 [build-system]
