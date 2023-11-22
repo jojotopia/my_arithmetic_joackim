@@ -19,6 +19,8 @@ test:
 deploy-stable:
   stage: deploy
   script:
+    - pip install poetry
+    - poetry install -v
     - poetry build
     - echo "my-arithmetic-$USER deployment on stable servers"
     - ls dist/
@@ -31,6 +33,8 @@ deploy-stable:
 deploy-develop:
   stage: deploy
   script:
+    - pip install poetry
+    - poetry install -v
     - poetry build
     - echo "my-arithmetic-$USER deployment on develop servers"
     - ls dist/
