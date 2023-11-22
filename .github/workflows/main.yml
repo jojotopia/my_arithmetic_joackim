@@ -41,7 +41,7 @@ jobs:
           url: https://readthedocs.com/api/v2/
   
   coverage:
-    runs-on: docker://python:3.11
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
