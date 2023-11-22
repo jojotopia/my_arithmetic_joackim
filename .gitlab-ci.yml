@@ -20,4 +20,4 @@ deploy:
     - ls dist/
   only:
     - tags
-    - main
+    - develop
