@@ -3,11 +3,10 @@ test:
   image: python:3.11
   coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
   script:
-    - pip install tox
-    - tox
-    - pip install pytest
-    - pip install coverage
-    - coverage run -m pytest
+    - pip install poetry
+    - poetry install
+    - poetry shell
+    - coverage run -m tox
     - coverage report
   tags:
     - docker
