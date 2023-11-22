@@ -5,8 +5,7 @@ test:
   script:
     - pip install poetry
     - poetry install
-    - poetry shell
-    - coverage run -m tox
-    - coverage report
+    - poetry run coverage run -m tox
+    - poetry run coverage report
   tags:
     - docker
