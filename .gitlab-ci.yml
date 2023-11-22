@@ -2,6 +2,7 @@ image: python:3.11
 
 stages:
   - test
+  - deploy
 
 test:
   stage: test
@@ -15,7 +16,7 @@ test:
   tags:
     - docker
 
-deploy:
+deploy-stable:
   stage: deploy
   script:
     - poetry build
