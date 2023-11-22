@@ -21,3 +21,5 @@ deploy:
   only:
     - tags
     - develop
+  tags:
+    - docker
