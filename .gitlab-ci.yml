@@ -26,7 +26,7 @@ deploy:
   tags:
     - docker
 
-deploydev:
+deploy:
   stage: deploy
   image: python:3.11
   script:
