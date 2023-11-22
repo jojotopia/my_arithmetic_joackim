@@ -4,9 +4,9 @@ on: [push, pull_request]
 
 jobs:
   deploy:
-    runs-on: docker://python:3.11
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
       - uses: dschep/install-poetry-action@v1.3
       - run: poetry install
       - run: poetry build

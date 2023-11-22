@@ -1,23 +1,26 @@
-name: My workflow
+name: Test
 
 on: [push, pull_request]
 
 jobs:
   test:
-    runs-on: docker://python:3.11
-    env:
-      COVERAGE: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
       - uses: dschep/install-poetry-action@v1.3
+        with:
+          python-version: '3.11'
+      - run: pip install tox
+      - run: tox
       - run: poetry install
       - run: poetry run tox
       - run: poetry run coverage run -m pytest
       - run: poetry run coverage report
   deploy:
-    runs-on: docker://python:3.11
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
       - uses: dschep/install-poetry-action@v1.3
       - run: poetry install
       - run: poetry build
