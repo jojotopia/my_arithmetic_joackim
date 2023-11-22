@@ -35,20 +35,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: readthedocs/readthedocs-action@v2.4.0
+      - uses: readthedocs/readthedocs-action@v2.4.0 # Utiliser une version spécifique de l'action
         with:
           token: ${{ secrets.RTD_TOKEN }}
           url: https://readthedocs.com/api/v2/
   
   coverage:
-    runs-on: ubuntu-latest
+    runs-on: docker://python:3.11
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
           python-version: '3.11'
-      - run: pip install pytest coverage
+      - run: pip install tox pytest coverage
+      - run: tox
+      - run: pip install poetry
+      - run: poetry install
+      - run: poetry run tox
+      - run: poetry run coverage run -m pytest
+      - run: poetry run coverage report
       - run: coverage run -m pytest
       - uses: coverallsapp/github-action@v1.1.2
         with:
           github-token: ${{ github.token }}
+          path-to-lcov: ./coverage/lcov.info # Spécifier le chemin du fichier lcov.info
