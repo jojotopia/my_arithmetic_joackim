@@ -6,7 +6,7 @@ test:
     - pip install coverage
     - pip install coverage-badge
     - tox
-    - coverage run tests/test_pgcd.py
+    - coverage run -m unittest tests/test_pgcd.py
     - coverage-badge -o badge.svg
   tags:
     - docker
