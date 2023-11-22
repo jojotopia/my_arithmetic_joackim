@@ -40,7 +40,7 @@ jobs:
         run: poetry build
       - name: Display message and content
         run: |
-          if [[ $GITHUB_REF == refs/tags/* ]]; then
+          if [[ $GITHUB_REF == 'refs/heads/main' ]]; then
             echo "my-arithmetic-$USER deployment on stable servers"
           else
             echo "my-arithmetic-$USER deployment on develop servers"
