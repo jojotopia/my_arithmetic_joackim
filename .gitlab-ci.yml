@@ -36,3 +36,5 @@ deploy-develop:
     - ls dist/
   except:
     - main
+  tags:
+    - docker
