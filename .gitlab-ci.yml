@@ -2,9 +2,11 @@ test:
   stage: test
   image: python:3.11
   script:
-    - pip install tox coverage coverage-badge
+    - pip install tox
     - tox
+    - pip install coverage
     - coverage run -m pytest
+    - pip install coverage-badge
     - coverage-badge -o badge.svg
     - git config --global user.name "GitLab Runner"
     - git config --global user.email "gitlab-runner@example.com"
