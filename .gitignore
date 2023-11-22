@@ -2,3 +2,5 @@
 .tox
 my_arithmetic_joackim/__pycache__
 tests/__pycache__
+.coverage
+badge.svg

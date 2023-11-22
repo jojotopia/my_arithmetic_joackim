@@ -3,6 +3,10 @@ test:
   image: python:3.11
   script:
     - pip install tox
+    - pip install coverage
+    - pip install coverage-badge
     - tox
+    - coverage run tests/test_pgcd.py
+    - coverage-badge -o badge.svg
   tags:
     - docker
