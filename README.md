@@ -1,5 +1,5 @@
 # my_arithmetic_joackim
-
+[![coverage report](https://gitlab.univ-lr.fr/jpiaud/my_arithmetic_joackim/badges/develop/coverage.svg)](https://gitlab.univ-lr.fr/jpiaud/my_arithmetic_joackim/-/commits/develop)
 
 
 ## Getting started

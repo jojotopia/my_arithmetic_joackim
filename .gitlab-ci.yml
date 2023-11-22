@@ -1,0 +1,27 @@
+test:
+  stage: test
+  image: python:3.11
+  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+  script:
+    - pip install poetry
+    - poetry install
+    - poetry run tox
+    - poetry run coverage run -m pytest
+    - poetry run coverage report
+  tags:
+    - docker
+
+deploy:
+  stage: deploy
+  image: python:3.11
+  script:
+    - pip install poetry
+    - poetry install
+    - poetry build
+    - echo "my-arithmetic-$USER deployment on stable servers"
+    - ls dist/
+  only:
+    - tags
+    - develop
+  tags:
+    - docker

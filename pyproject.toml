@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "my-arithmetic-joackim"
+version = "0.1.0"
+description = ""
+authors = ["Joackim PIAUD <joackim.piaud@etudiant.univ-lr.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+tox = "*"
+pytest = "*"
+coverage = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
