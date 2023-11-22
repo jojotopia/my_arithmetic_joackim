@@ -10,3 +10,14 @@ test:
     - poetry run coverage report
   tags:
     - docker
+
+deploy:
+  stage: deploy
+  image: python:3.11
+  script:
+    - poetry build
+    - echo "my-arithmetic-$USER deployment on stable servers"
+    - ls dist/
+  only:
+    - tags
+    - main
