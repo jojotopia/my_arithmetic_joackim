@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v2
+      - run: pip install poetry
       - run: poetry install
       - run: poetry build
       - run: echo "my-arithmetic-joackim deployment on develop servers"
