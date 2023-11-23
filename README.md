@@ -1,1 +1,2 @@
 [![coverage report](https://gitlab.univ-lr.fr/jpiaud/my_arithmetic_joackim/badges/new_way/coverage.svg)](https://gitlab.univ-lr.fr/jpiaud/my_arithmetic_joackim/-/commits/new_way)
+[![Coverage Status](https://coveralls.io/repos/github/jojotopia/my_arithmetic_joackim/badge.svg)](https://coveralls.io/github/jojotopia/my_arithmetic_joackim)
